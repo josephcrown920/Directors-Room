@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Directors Room"
+description = "An imported cinematic AI filmmaking studio landing page for storyboarding, generating, and directing film sequences."
+version = "1.0.0"
+id = "artifacts/directors-room"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20309
+
+[services.development]
+run = "pnpm --filter @workspace/directors-room run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/directors-room", "run", "build"]
+
+[services.production.run]
+args = ["pnpm", "--filter", "@workspace/directors-room", "run", "start"]
+
+[services.production.run.env]
+PORT = "20309"
+NODE_ENV = "production"
+
+[services.env]
+PORT = "20309"
+BASE_PATH = "/"
