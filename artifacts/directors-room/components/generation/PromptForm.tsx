@@ -1,5 +1,5 @@
 "use client";
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 export default function PromptForm({
   mode,
@@ -7,6 +7,10 @@ export default function PromptForm({
   mode: "image" | "video";
 }) {
   const [prompt, setPrompt] = useState("");
+  useEffect(() => {
+    const value = new URLSearchParams(window.location.search).get("prompt");
+    if (value) setPrompt(value);
+  }, []);
   const [status, setStatus] = useState<string | null>(null);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
   const promptId = useId();

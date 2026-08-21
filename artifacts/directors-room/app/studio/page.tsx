@@ -12,6 +12,21 @@ const destinations = [
     description: "Turn a visual reference into reusable camera, lighting, grade, and motion DNA.",
   },
   {
+    href: "/viral-presets",
+    label: "Viral presets",
+    description: "Remix repeatable video formats with hooks, transitions, and edit rhythm.",
+  },
+  {
+    href: "/storyboard",
+    label: "Storyboard",
+    description: "Turn direction into ordered shots with prompts, motion, and continuity.",
+  },
+  {
+    href: "/moodboard",
+    label: "Moodboard",
+    description: "Collect the visual references, palette, and feeling for the next sequence.",
+  },
+  {
     href: "/generate/image",
     label: "Generate image",
     description: "Create a still from a text prompt and use it as a visual starting point.",

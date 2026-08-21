@@ -7,6 +7,9 @@ const links = [
   { href: "/studio", label: "Studio" },
   { href: "/layers", label: "Layers" },
   { href: "/presets", label: "Presets" },
+  { href: "/viral-presets", label: "Viral" },
+  { href: "/storyboard", label: "Storyboard" },
+  { href: "/moodboard", label: "Moodboard" },
   { href: "/generate/image", label: "Image" },
   { href: "/generate/video", label: "Video" },
 ];

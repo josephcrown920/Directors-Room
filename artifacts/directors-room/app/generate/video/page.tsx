@@ -1,4 +1,5 @@
 import PromptForm from "@/components/generation/PromptForm";
+import CreativeAgents from "@/components/agents/CreativeAgents";
 
 export default function GenerateVideoPage() {
   return (
@@ -10,6 +11,7 @@ export default function GenerateVideoPage() {
         <p className="text-sm text-muted mb-6">
           Fire off a Kling or fal.ai motion job via /api/video, then poll /api/video/status.
         </p>
+        <CreativeAgents />
         <PromptForm mode="video" />
       </div>
     </main>

@@ -8,6 +8,7 @@ import {
   type Preset,
   type TargetModel,
 } from "@/lib/presets";
+import CreativeAgents from "@/components/agents/CreativeAgents";
 
 const MAX_BYTES = 18 * 1024 * 1024;
 const fallbackThumbs = [
@@ -208,6 +209,8 @@ export default function PresetStudio() {
         </div>
         {extractError ? <p className="mt-3 text-xs text-gold">{extractError}</p> : null}
       </section>
+
+      <CreativeAgents initialPrompt={subject} onUsePrompt={setSubject} />
 
       <section className="sticky top-14 z-10 rounded-2xl border border-line bg-ink/95 p-4 backdrop-blur">
         <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-gold">Target engine</p>
