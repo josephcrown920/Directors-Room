@@ -1,41 +1,23 @@
 "use client";
-import { useState } from "react";
-import dynamic from "next/dynamic";
-import LayerSidebar from "@/components/layers/LayerSidebar";
-import LayerControls from "@/components/layers/LayerControls";
-import { SceneLayer } from "@/lib/types";
-import { sampleScene } from "@/lib/layers/sampleScene";
-
-const LayerCanvas = dynamic(() => import("@/components/layers/LayerCanvas"), {
-  ssr: false,
-});
+import { LayerStudio } from "@/components/layers/aurora/LayerStudio";
 
 export default function LayersPage() {
-  const [layers, setLayers] = useState<SceneLayer[]>(sampleScene.layers);
-  const [activeId, setActiveId] = useState<string | null>(layers[0]?.id ?? null);
-
-  const activeLayer = layers.find((l) => l.id === activeId) ?? null;
-
-  function updateLayer(next: SceneLayer) {
-    setLayers((prev) => prev.map((l) => (l.id === next.id ? next : l)));
-  }
-
-  function toggleVisible(id: string) {
-    setLayers((prev) =>
-      prev.map((l) => (l.id === id ? { ...l, visible: !l.visible } : l))
-    );
-  }
-
   return (
-    <main className="min-h-screen bg-ink text-white flex">
-      <LayerSidebar
-        layers={layers}
-        activeId={activeId}
-        onSelect={setActiveId}
-        onToggleVisible={toggleVisible}
-      />
-      <LayerCanvas layers={layers} />
-      <LayerControls layer={activeLayer} onChange={updateLayer} />
+    <main className="min-h-screen bg-ink px-4 py-8 text-white md:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span className="text-xs uppercase tracking-[0.25em] text-gold">Directors Room · Layers</span>
+            <h1 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
+              One frame. Infinite layers.
+            </h1>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+              Upload a source frame, name the change, and build a render sequence while the rest of the image stays locked.
+            </p>
+          </div>
+        </div>
+        <LayerStudio />
+      </div>
     </main>
   );
 }

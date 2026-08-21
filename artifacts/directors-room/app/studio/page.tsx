@@ -7,6 +7,11 @@ const destinations = [
     description: "Composite a scene and adjust the position, scale, and rotation of each layer.",
   },
   {
+    href: "/presets",
+    label: "Presets",
+    description: "Turn a visual reference into reusable camera, lighting, grade, and motion DNA.",
+  },
+  {
     href: "/generate/image",
     label: "Generate image",
     description: "Create a still from a text prompt and use it as a visual starting point.",

@@ -5,6 +5,9 @@ import TopNav from "@/components/ui/TopNav";
 export const metadata: Metadata = {
   title: "Directors Room — Cinematic AI Studio",
   description: "Storyboard, generate, and direct AI film sequences.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

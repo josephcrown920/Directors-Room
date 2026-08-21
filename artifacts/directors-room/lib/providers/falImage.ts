@@ -2,11 +2,14 @@ import { falClient } from "./fal";
 
 const IMG_MODEL = process.env.FAL_TXT2IMG_MODEL || "fal-ai/flux-pro/v1.1-ultra";
 
-export async function generateImage(prompt: string): Promise<{ url: string }> {
+export async function generateImage(prompt: string, imageDataUrl?: string): Promise<{ url: string }> {
   if (!falClient) throw new Error("FAL_KEY not configured");
 
   const result = await falClient.subscribe(IMG_MODEL, {
-    input: { prompt },
+    input: {
+      prompt,
+      ...(imageDataUrl ? { image_url: imageDataUrl } : {}),
+    },
     logs: false,
   });
 
