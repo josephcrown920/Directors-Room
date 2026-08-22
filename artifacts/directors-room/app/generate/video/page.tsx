@@ -1,19 +1,2 @@
-import PromptForm from "@/components/generation/PromptForm";
-import CreativeAgents from "@/components/agents/CreativeAgents";
-
-export default function GenerateVideoPage() {
-  return (
-    <main className="min-h-screen bg-ink px-6 lg:px-10 py-12">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="font-display text-3xl text-white mb-2">
-          Video generator
-        </h1>
-        <p className="text-sm text-muted mb-6">
-          Fire off a Kling or fal.ai motion job via /api/video, then poll /api/video/status.
-        </p>
-        <CreativeAgents />
-        <PromptForm mode="video" />
-      </div>
-    </main>
-  );
-}
+import PromptForm from "@/components/generation/PromptForm"; import CreativeAgents from "@/components/agents/CreativeAgents";
+export default function GenerateVideoPage(){return <main className="min-h-screen bg-ink px-6 py-12 lg:px-10"><div className="mx-auto max-w-4xl"><div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start"><div><div className="relative overflow-hidden rounded-2xl border border-line"><img src="/aurora/demo-motion.jpg" alt="Cinematic motion reference" className="aspect-video w-full object-cover"/><div className="absolute bottom-4 left-4 rounded-full border border-white/10 bg-ink/80 px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-gold backdrop-blur">Motion reference</div></div><div className="mt-6"><CreativeAgents/></div></div><div><h1 className="font-display text-4xl text-white md:text-5xl">Make the frame move.</h1><p className="mt-3 text-sm leading-relaxed text-muted">Set the scene in motion, keep the visual intent, and render a shot ready for your storyboard.</p><div className="mt-7"><PromptForm mode="video"/></div></div></div></div></main>}
