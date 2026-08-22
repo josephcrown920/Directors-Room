@@ -1,21 +1,2 @@
-import AuthForm from "@/components/auth/AuthForm";
-import Link from "next/link";
-
-export default function SignupPage() {
-  return (
-    <main className="min-h-screen bg-ink flex items-center justify-center px-6">
-      <div className="w-full max-w-sm">
-        <h1 className="font-display text-3xl text-white text-center mb-8">
-          Create your account
-        </h1>
-        <AuthForm mode="signup" />
-        <p className="text-center text-sm text-muted mt-6">
-          Already have an account?{" "}
-          <Link href="/login" className="text-accent">
-            Log in
-          </Link>
-        </p>
-      </div>
-    </main>
-  );
-}
+import AuthForm from "@/components/auth/AuthForm"; import Link from "next/link";
+export default function SignupPage(){return <main className="grid min-h-screen bg-ink text-white lg:grid-cols-2"><aside className="relative hidden overflow-hidden border-r border-line lg:block"><img src="/aurora/demo-layerstack.jpg" alt="Layered cinematic composition" className="absolute inset-0 h-full w-full object-cover opacity-75"/><div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/10"/><div className="absolute inset-x-10 bottom-12"><span className="text-xs uppercase tracking-[0.24em] text-gold">Your director&apos;s room</span><h1 className="mt-4 max-w-md font-display text-5xl leading-tight">Start with a frame. Build the whole world.</h1><p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">Create, layer, direct, and preview a sequence without leaving the visual workspace.</p></div></aside><section className="flex items-center justify-center px-6 py-16"><div className="w-full max-w-sm"><div className="mb-8 lg:hidden"><img src="/aurora/demo-layerstack.jpg" alt="Layered cinematic composition" className="aspect-video w-full rounded-2xl border border-line object-cover"/></div><p className="mb-3 text-xs uppercase tracking-[0.25em] text-gold">Directors Room</p><h1 className="mb-8 font-display text-4xl text-white">Create your account.</h1><AuthForm mode="signup"/><p className="mt-6 text-sm text-muted">Already have an account? <Link href="/login" className="text-accent hover:text-white">Log in</Link></p></div></section></main>}
