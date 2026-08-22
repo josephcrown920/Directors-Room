@@ -1,3 +1,71 @@
 import Link from "next/link";
-const destinations=[{href:"/layers",label:"Layers",description:"Composite a scene and adjust every visual layer.",image:"/aurora/demo-layerstack.jpg"},{href:"/presets",label:"Presets",description:"Turn a visual reference into reusable camera and lighting DNA.",image:"/aurora/demo-motion.jpg"},{href:"/viral-presets",label:"Viral presets",description:"Remix repeatable video formats with visible hook and edit rhythm.",image:"/aurora/demo-charsheet.jpg"},{href:"/storyboard",label:"Storyboard",description:"Turn direction into ordered shots with continuity.",image:"/aurora/hero-street.jpg"},{href:"/moodboard",label:"Moodboard",description:"Collect the palette and feeling for the next sequence.",image:"/aurora/hero-cone.jpg"},{href:"/generate/image",label:"Generate image",description:"Create a still and use it as a visual starting point.",image:"/aurora/layer-armor.jpg"},{href:"/generate/video",label:"Generate video",description:"Turn a scene or prompt into a cinematic motion shot.",image:"/aurora/demo-motion.jpg"}];
-export default function StudioPage(){return <main className="min-h-screen bg-ink px-6 py-20 text-white lg:px-10"><div className="mx-auto max-w-6xl"><span className="text-xs uppercase tracking-[0.25em] text-gold">Director&apos;s workspace</span><h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight md:text-6xl">Choose the next frame.</h1><p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">Every tool starts with a visual outcome. Pick the frame you want to shape next.</p><div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{destinations.map(d=><Link key={d.href} href={d.href} className="group overflow-hidden rounded-2xl border border-line bg-panel/70 transition-all hover:-translate-y-1 hover:border-accent"><div className="aspect-video overflow-hidden"><img src={d.image} alt="" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"/></div><div className="p-5"><h2 className="font-display text-2xl text-white">{d.label}</h2><p className="mt-3 text-sm leading-relaxed text-muted">{d.description}</p><span className="mt-6 inline-block text-xs uppercase tracking-widest text-gold">Open →</span></div></Link>)}</div></div></main>}
+
+const destinations = [
+  {
+    href: "/layers",
+    label: "Layers",
+    description: "Composite a scene and adjust the position, scale, and rotation of each layer.",
+  },
+  {
+    href: "/presets",
+    label: "Presets",
+    description: "Turn a visual reference into reusable camera, lighting, grade, and motion DNA.",
+  },
+  {
+    href: "/viral-presets",
+    label: "Viral presets",
+    description: "Remix repeatable video formats with hooks, transitions, and edit rhythm.",
+  },
+  {
+    href: "/storyboard",
+    label: "Storyboard",
+    description: "Turn direction into ordered shots with prompts, motion, and continuity.",
+  },
+  {
+    href: "/moodboard",
+    label: "Moodboard",
+    description: "Collect the visual references, palette, and feeling for the next sequence.",
+  },
+  {
+    href: "/generate/image",
+    label: "Generate image",
+    description: "Create a still from a text prompt and use it as a visual starting point.",
+  },
+  {
+    href: "/generate/video",
+    label: "Generate video",
+    description: "Turn a scene or prompt into a cinematic motion shot.",
+  },
+];
+
+export default function StudioPage() {
+  return (
+    <main className="min-h-screen bg-ink px-6 py-20 text-white lg:px-10">
+      <div className="mx-auto max-w-5xl">
+        <span className="text-xs uppercase tracking-[0.25em] text-gold">Director&apos;s workspace</span>
+        <h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight md:text-6xl">
+          Choose the next frame.
+        </h1>
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+          Move from visual layers to generated footage without leaving the room.
+        </p>
+
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {destinations.map((destination) => (
+            <Link
+              key={destination.href}
+              href={destination.href}
+              className="group rounded-2xl border border-line bg-panel/70 p-6 transition-colors hover:border-accent"
+            >
+              <h2 className="font-display text-2xl text-white">{destination.label}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{destination.description}</p>
+              <span className="mt-8 inline-block text-xs uppercase tracking-widest text-gold transition-transform group-hover:translate-x-1">
+                Open →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
