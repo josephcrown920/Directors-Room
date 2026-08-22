@@ -1,21 +1,2 @@
-import AuthForm from "@/components/auth/AuthForm";
-import Link from "next/link";
-
-export default function LoginPage() {
-  return (
-    <main className="min-h-screen bg-ink flex items-center justify-center px-6">
-      <div className="w-full max-w-sm">
-        <h1 className="font-display text-3xl text-white text-center mb-8">
-          Welcome back
-        </h1>
-        <AuthForm mode="login" />
-        <p className="text-center text-sm text-muted mt-6">
-          No account?{" "}
-          <Link href="/signup" className="text-accent">
-            Sign up
-          </Link>
-        </p>
-      </div>
-    </main>
-  );
-}
+import AuthForm from "@/components/auth/AuthForm"; import Link from "next/link";
+export default function LoginPage(){return <main className="grid min-h-screen bg-ink text-white lg:grid-cols-2"><aside className="relative hidden overflow-hidden border-r border-line lg:block"><img src="/aurora/hero-street.jpg" alt="Cinematic reference scene" className="absolute inset-0 h-full w-full object-cover opacity-70"/><div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/10"/><div className="absolute inset-x-10 bottom-12"><span className="text-xs uppercase tracking-[0.24em] text-gold">Directors Room</span><h1 className="mt-4 max-w-md font-display text-5xl leading-tight">Return to the frame you were shaping.</h1><p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">Your storyboards, references, and visual direction are ready in the studio.</p></div></aside><section className="flex items-center justify-center px-6 py-16"><div className="w-full max-w-sm"><div className="mb-8 lg:hidden"><img src="/aurora/demo-motion.jpg" alt="Cinematic motion reference" className="aspect-video w-full rounded-2xl border border-line object-cover"/></div><p className="mb-3 text-xs uppercase tracking-[0.25em] text-gold">Welcome back</p><h1 className="mb-8 font-display text-4xl text-white">Enter the studio.</h1><AuthForm mode="login"/><p className="mt-6 text-sm text-muted">No account? <Link href="/signup" className="text-accent hover:text-white">Sign up</Link></p></div></section></main>}
