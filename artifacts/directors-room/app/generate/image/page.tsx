@@ -1,17 +1,2 @@
 import PromptForm from "@/components/generation/PromptForm";
-
-export default function GenerateImagePage() {
-  return (
-    <main className="min-h-screen bg-ink px-6 lg:px-10 py-12">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="font-display text-3xl text-white mb-2">
-          Image generator
-        </h1>
-        <p className="text-sm text-muted mb-6">
-          Use fal.ai or Replicate-backed models (wired via /api/image) to create still frames.
-        </p>
-        <PromptForm mode="image" />
-      </div>
-    </main>
-  );
-}
+export default function GenerateImagePage(){return <main className="min-h-screen bg-ink px-6 py-12 lg:px-10"><div className="mx-auto max-w-4xl"><div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"><div><img src="/aurora/hero-cone.jpg" alt="Generated cinematic still reference" className="aspect-[4/5] w-full rounded-2xl border border-line object-cover"/><p className="mt-3 text-xs uppercase tracking-[0.2em] text-gold">Still frame / visual reference</p></div><div><h1 className="font-display text-4xl text-white md:text-5xl">Generate a frame worth directing.</h1><p className="mt-3 max-w-md text-sm leading-relaxed text-muted">Describe the image, then use the result as the visual anchor for a sequence.</p><div className="mt-7"><PromptForm mode="image"/></div></div></div></div></main>}
