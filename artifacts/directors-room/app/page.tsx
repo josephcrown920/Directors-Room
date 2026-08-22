@@ -12,17 +12,30 @@ export default function Home() {
       <Marquee />
       <WorkflowShowcase />
       <FeatureGrid />
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <div className="mb-12 max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.25em] text-gold">See it change</span>
-          <h2 className="mt-3 font-display text-4xl text-white md:text-5xl">The result is the explanation.</h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted">Drag through the frame to see how a director can reshape a scene without starting over.</p>
+
+      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-32">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-xs uppercase tracking-[0.25em] text-gold">Result</span>
+          <h2 className="font-display text-4xl md:text-5xl text-white mt-3">
+            See the transformation.
+          </h2>
         </div>
-        <div className="grid gap-10 md:grid-cols-2">
-          <BeforeAfter beforeSrc="/aurora/hero-street.jpg" afterSrc="/aurora/demo-motion.jpg" title="Direct motion from one frame" desc="Compare a still reference with the cinematic motion treatment it becomes." />
-          <BeforeAfter beforeSrc="/aurora/hero-cone.jpg" afterSrc="/aurora/demo-layerstack.jpg" title="Build the shot in layers" desc="See the visual source separate into editable subject, light, and environment decisions." />
+        <div className="grid md:grid-cols-2 gap-14">
+          <BeforeAfter
+            beforeSrc="/demo/before-still.jpg"
+            afterSrc="/demo/after-relit.jpg"
+            title="Relighting a scene"
+            desc="Drag to compare the original still against the relit, graded output."
+          />
+          <BeforeAfter
+            beforeSrc="/demo/before-flat.jpg"
+            afterSrc="/demo/after-layers.jpg"
+            title="Layer decomposition"
+            desc="One photo separated into background, subject, and shadow layers."
+          />
         </div>
       </section>
+
       <Footer />
     </main>
   );
